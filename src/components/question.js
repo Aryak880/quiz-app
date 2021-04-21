@@ -42,8 +42,8 @@ const QuestionCard = ({data, checkCorrectAns}) => {
                 question.replace('&#039;', "'").replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"').replace('&quot;', '"')
             }</h3>
             <div className="question-button-container">
-                <button className="true" disable={buttonClicked} onClick={() => handleButtonClicked(True)}>True</button>
-                <button className="false" disable={buttonClicked} onClick={() => handleButtonClicked(False)}>False </button>
+                <button className="true" disabled={buttonClicked} onClick={() => handleButtonClicked(True)}>True</button>
+                <button className="false" disabled={buttonClicked} onClick={() => handleButtonClicked(False)}>False </button>
             </div>
             {buttonClicked && <span style={{color: message.color}}> {message.message}</span>}
         </div>
