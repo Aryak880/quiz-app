@@ -4,7 +4,10 @@ const QuestionCard = ({data, checkCorrectAns}) => {
     
     // console.log(props)
     const [buttonClicked, setButtonClicked] = useState(false)
-    const [attemptedColor, setAttemptedColor] = useState('#000000')
+    const [message, setMessage] = useState({
+        color: '#000000',
+        message: ''
+    })
     const {question, correct_answer} = data
     let True, False
 
@@ -21,9 +24,15 @@ const QuestionCard = ({data, checkCorrectAns}) => {
             setButtonClicked(true)
 
             if(value)
-                setAttemptedColor('#00FF48')
+                setMessage({
+                    color: '#00FF48',
+                    message: "Correct Ans"                    
+                })
             else
-                setAttemptedColor('#DB0202')
+                setMessage({
+                    color: '#DB0202',
+                    message: "Wrong Ans"
+                })
         }
     }
     
@@ -36,7 +45,7 @@ const QuestionCard = ({data, checkCorrectAns}) => {
                 <button className="true" disable={buttonClicked} onClick={() => handleButtonClicked(True)}>True</button>
                 <button className="false" disable={buttonClicked} onClick={() => handleButtonClicked(False)}>False </button>
             </div>
-            {buttonClicked && <span style={{color: attemptedColor}}> Attempted</span>}
+            {buttonClicked && <span style={{color: message.color}}> {message.message}</span>}
         </div>
     )
 }
