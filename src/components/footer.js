@@ -4,7 +4,7 @@ const Footer = () => {
     return(      
             <footer>© developed by:
                  <a target="_blank" href="https://www.instagram.com/aryaksinghchauhan/" rel="noreferrer">
-                     Vinay Gupta 
+                     Deepak Giri 
                  </a> &nbsp;😊              
             </footer>
     )
